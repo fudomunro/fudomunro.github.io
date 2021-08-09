@@ -1,13 +1,9 @@
 {
     "projectId": "gzigyj",
-    "baseUrl": "https://staging.noredink.com",
+    "baseUrl": "https://fudomunro.github.io",
     "chromeWebSecurity": false,
     "defaultCommandTimeout":10000,
     "watchForFileChanges": false,
-    "viewportWidth": 1002,
-    "retries": {
-      "runMode": 2,
-      "openMode": 0
-    }
+    "viewportWidth": 1002
   }
   
