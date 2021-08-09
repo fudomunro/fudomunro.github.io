@@ -7,6 +7,6 @@ describe('My First Test', () => {
   
   it('Can load the page', () => {
     cy.visit("/test.html")
-    cy.contains("The Page").should('be.visible')
+    cy.contains("Some Page").should('be.visible')
   })
 })
