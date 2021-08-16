@@ -4,7 +4,7 @@ describe('My First Test', () => {
   
   it('Can load the page', () => {
     cy.visit("/test.html")
-    cy.get('title').should('have.text', 'QA Web Automation Activity')
+    cy.title().should('eq', 'QA Web Automation Activity')
   })
  
   it('Can have another passing case', () => {
