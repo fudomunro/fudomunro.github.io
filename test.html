@@ -1,5 +1,8 @@
 <html>
-  <head><title>QA Web Automation Activity</title></head>
+  <head>
+    <title>QA Web Automation Activity</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" ></script>
+  </head>
   <body>
     <div>
       <div>
@@ -10,10 +13,15 @@
       </div>
 
       <p>
-        <button />Toggle Modal.
+        <button id="test" />Toggle Modal.
       </p>
     
     <div>
-
+    <script>
+$(document).ready(function() {
+  $("#test").click(function() {alert("hello")})
+});
+      
+    </script>
   </body>
 </html>
