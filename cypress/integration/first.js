@@ -30,14 +30,23 @@ describe('My First Test', () => {
     cy.get("updated-area").should('have.text', 'Update Successful')
   })
   
+  it('The modal can be shown', () => {
+    cy.visit("/test.html")
+    
+    cy.get('#button_container button').then(($btn) => {
+      $btn.click()
+      cy.get('#modal h2').should('be.visible')
+    })
+  })
+  
   it('Can have clicks get intercepted', () => {
     cy.visit("/test.html")
     
-    cy.get('open-modal').then(($btn) => {
+    cy.get('#button_container button').then(($btn) => {
       $btn.click()
-      cy.get('modal-title').should('be.visible')
+      cy.get('#modal h2').should('be.visible')
       $btn.click()
-      cy.get('modal-title').should('not.be.visible')
+      cy.get('#modal h2').should('not.be.visible')
     })
   })
   
