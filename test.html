@@ -4,8 +4,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" ></script>
   </head>
   <body>
+    0.2
     <div>
-      <div>
+      <div id="#modal" style="display: None">
         <h2>Modal Title</h2>
         <p>
         This modal is open.
@@ -19,7 +20,7 @@
     <div>
     <script>
 $(document).ready(function() {
-  $("#test").click(function() {alert("hello")})
+  $("#test").click(function() {$("#modal").show()})
 });
       
     </script>
