@@ -4,7 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" ></script>
   </head>
   <body>
-    0.4
+    0.5
     <div>
       <div id="modal" style="display: none">
         <h2>Modal Title</h2>
@@ -24,8 +24,8 @@ function setUpOpen() {
     .append("<button>Open</button>")
     .click(
       function(){
-        $("#modal").show();
         $("#button_container button").remove();
+        $("#modal").show();
         setUpClose()
       }
     )
@@ -36,8 +36,8 @@ function setUpClose() {
     .append("<button>Close</button>")
     .click(
       function(){
-        $("#modal").hide()
         $("#button_container button").remove();
+        $("#modal").hide()
         setUpOpen()
       }
     )
