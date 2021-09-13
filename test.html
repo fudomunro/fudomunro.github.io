@@ -14,23 +14,37 @@
       </div>
 
       <p id="button_container">
-        <button id="test" />Open
       </p>
     
     <div>
     <script>
+      
+function setUpOpen() {
+  $("#button_container")
+    .append("<button>Open</button>")
+    .click(
+      function(){
+        $("#modal").show();
+        $("#button_container button").remove();
+        setUpClose()
+      }
+    )
+}
+      
+function setUpClose() {
+  $("#button_container")
+    .append("<button>Close</button>")
+    .click(
+      function(){
+        $("#modal").hide()
+        $("#button_container button").remove();
+        setUpOpen()
+      }
+    )
+}
+      
 $(document).ready(function() {
-  $("#test").click(function() {
-    $("#modal").show();
-    
-    $("#test").remove();
-    $("#button_container")
-      .append("<button>Close</button>")
-      .click(
-        function(){$("#modal").hide()}
-      )
-    
-  })
+  setUpOpen();
 });
       
     </script>
