@@ -25,15 +25,16 @@ describe('My First Test', () => {
   it('Can have a timing issue', () => {
     cy.visit("/test.html")
     
-    cy.get("action-button").click()
-    
-    cy.get("updated-area").should('have.text', 'Update Successful')
+    cy.get('#open_button').then(($btn) => {
+      $btn.click()
+      cy.get('#modal h2').should('be.visible')
+    })
   })
   
   it('The modal can be shown', () => {
     cy.visit("/test.html")
     
-    cy.get('#button_container button').then(($btn) => {
+    cy.get('#open_button').then(($btn) => {
       $btn.click()
       cy.get('#modal h2').should('be.visible')
     })
@@ -41,8 +42,8 @@ describe('My First Test', () => {
   
   it('Can have clicks get intercepted', () => {
     cy.visit("/test.html")
-    
-    cy.get('#button_container button').then(($btn) => {
+
+    cy.get('#open_button').then(($btn) => {
       $btn.click()
       cy.get('#modal h2').should('be.visible')
       $btn.click()
