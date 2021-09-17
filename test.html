@@ -22,8 +22,7 @@
     <div class="w3-display-middle w3-jumbo">
       <p>logo</p>
     </div>
-    <div class="w3-display-topleft w3-container w3-xlarge">
-      <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">menu</button></p>
+    <div class="w3-display-topleft w3-container w3-xlarge" id="button_container">
       <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
     </div>
     <div class="w3-display-bottomleft w3-container">
@@ -104,13 +103,13 @@
     <script>
 
 function open() {
-  $("#modal").show();
+  $("#menu").css("display", "block");
   setUpClose()
 }
       
 function setUpOpen() {
   $("#button_container")
-    .append("<button id='open_button'>Open</button>")
+    .append("<button id='open_button' class='w3-button w3-black'>show menu</button>")
     .click(
       function(){
         $("#open_button").detach();
@@ -121,11 +120,11 @@ function setUpOpen() {
       
 function setUpClose() {
   $("#button_container")
-    .append("<button id='close_button'>Close</button>")
+    .append("<button id='close_button' class='w3-button w3-black'>hide menu</button>")
     .click(
       function(){
         $("#close_button").detach();
-        $("#modal").hide()
+        $("#menu").css("display", "none");
         setUpOpen()
       }
     )

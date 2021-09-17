@@ -40,15 +40,14 @@ describe('My First Test', () => {
     })
   })
   
-  it('Can have clicks get intercepted', () => {
+  it.only('Can have clicks get intercepted', () => {
     cy.visit("/test.html")
 
-    cy.get('#open_button').then(($btn) => {
-      $btn.click()
-      cy.get('#modal h2').should('be.visible')
-      $btn.click()
-      cy.get('#modal h2').should('not.be.visible')
-    })
+    cy.get('#open_button').click()
+    cy.get('#menu h1').should('be.visible')
+
+    cy.get('#close_button').click()
+    cy.get('#menu h1').should('not.be.visible')
   })
   
 
