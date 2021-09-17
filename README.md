@@ -1,3 +1,17 @@
+## Usage
+
+### Running locally
+
+Change `baseUrl` in Cypress.json to be `http://localhost:8000`
+
+Serve the page with:
+
+`python3 -m http.server`
+
+Start cypress with:
+
+`npx cypress open`
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/fudomunro/fudomunro.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
