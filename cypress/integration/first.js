@@ -6,48 +6,34 @@ describe('My First Test', () => {
     cy.visit("/test.html")
     cy.title().should('eq', 'QA Web Automation Activity')
   })
- 
-  it('Can have another passing case', () => {
-    expect(true).to.equal(true)
-  })
   
-  it('Can be hard to find a good selector', () => {
+  it('Check a menu item', () => {
     cy.visit("/test.html")
     
-    // We're trying to press a particular button, but can't find a good selector for it
-    // Page will include buttons with some kind of automatically generated identifiers (or at least they can look that way)
-    // Target button will not be a button at all, but rather a div with some text
-    
-    // Help! This worked, but then the page changed, and now it's failing!
-    cy.get('html body div div p button').click()
+    // Help! This worked before, but then the page changed, and now it's failing!
+    cy.get('html body div div button').click()
+
+    cy.get("h5").first().should("contain", "Tomato Soup")
   })
   
   it('Can have a timing issue', () => {
     cy.visit("/test.html")
     
-    cy.get('#open_button').then(($btn) => {
-      $btn.click()
-      cy.get('#modal h2').should('be.visible')
-    })
-  })
-  
-  it('The modal can be shown', () => {
-    cy.visit("/test.html")
-    
-    cy.get('#open_button').then(($btn) => {
-      $btn.click()
-      cy.get('#modal h2').should('be.visible')
-    })
-  })
-  
-  it.only('Can have clicks get intercepted', () => {
-    cy.visit("/test.html")
-
     cy.get('#open_button').click()
-    cy.get('#menu h1').should('be.visible')
 
-    cy.get('#close_button').click()
-    cy.get('#menu h1').should('not.be.visible')
+    cy.log(cy.get("#contact h1").its("text"));
+    
+    cy.get('#contact button').click()
+  })
+  
+  it('Can toggle the contact form', () => {
+    cy.visit("/test.html")
+
+    cy.contains("div", "show contact").click()
+    cy.contains('Reserve a table').should('be.visible')
+
+    cy.contains("div", "hide contact").click()
+    cy.contains('Reserve a table').should('not.be.visible')
   })
   
 
