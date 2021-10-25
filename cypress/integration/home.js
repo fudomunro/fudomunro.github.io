@@ -9,7 +9,9 @@ describe('My First Test', () => {
   
     it('Check a menu item', () => {
       cy.visit('/home.html')
-        
+      
+      cy.contains('button', 'open menu').click()
+      
       cy.get('[data-nri-id="menu"] h5').first().should('be.visible').should('contain', 'Tomato Soup')
     })
   
