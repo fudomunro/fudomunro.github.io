@@ -34,7 +34,7 @@ describe('My First Test', () => {
       cy.contains('div', 'show contact').click()
       cy.contains('Reserve a table').should('be.visible')
   
-      cy.contains('div', 'hide contact').click()
+      cy.contains('[data-nri-id="contact"] span', 'x').click()
       cy.contains('Reserve a table').should('not.be.visible')
     })
   
