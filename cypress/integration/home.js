@@ -10,7 +10,8 @@ describe('My First Test', () => {
     it('Check a menu item', () => {
       cy.visit('/home.html')
       
-      cy.contains('button', 'open menu').click()
+      // THIS SHOULD BE A BUTTON!!!
+      cy.contains('div', 'open menu').click()
       
       cy.get('[data-nri-id="menu"] h5').first().should('be.visible').should('contain', 'Tomato Soup')
     })
@@ -33,9 +34,11 @@ describe('My First Test', () => {
     it('Can toggle the contact form', () => {
       cy.visit('/home.html')
   
+      // THIS SHOULD BE A BUTTON!!
       cy.contains('div', 'show contact').click()
       cy.contains('Reserve a table').should('be.visible')
   
+      // BUTTONZZ
       cy.contains('[data-nri-id="contact"] span', 'x').click()
       cy.contains('Reserve a table').should('not.be.visible')
     })
