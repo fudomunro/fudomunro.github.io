@@ -9,11 +9,8 @@ describe('My First Test', () => {
   
     it('Check a menu item', () => {
       cy.visit('/home.html')
-  
-      // Help! This worked before, but then the page changed, and now it's failing!
-      cy.get('html body div div button').click()
-  
-      cy.get('h5').first().should('contain', 'Tomato Soup')
+        
+      cy.get('data-nri-id=[menu] h5').first().should('contain', 'Tomato Soup')
     })
   
     it('Can have a timing issue', () => {
