@@ -19,6 +19,7 @@ describe('My First Test', () => {
     it('Can have a timing issue', () => {
       cy.visit('/home.html')
   
+      cy.wait(2000)
       cy.contains('div', 'show contact').click()
       cy.contains('contact').should('be.visible')
   
