@@ -7,16 +7,16 @@ describe('My First Test', () => {
       cy.title().should('eq', 'QA Web Automation Activity')
     })
   
-    it('Check a menu item', () => {
+    it('Can view a menu item', () => {
       cy.visit('/test.html')
   
       // Help! This worked before, but then the page changed, and now it's failing!
       cy.get('html body div div button').click()
   
-      cy.get('h5').first().should('contain', 'Tomato Soup')
+      cy.get('h5').first().should('be.visible').should('contain', 'Tomato Soup')
     })
   
-    it('Can have a timing issue', () => {
+    it('Can enter contact details', () => {
       cy.visit('/test.html')
   
       cy.contains('div', 'show contact').click()
@@ -39,8 +39,4 @@ describe('My First Test', () => {
       cy.contains('div', 'hide contact').click()
       cy.contains('Reserve a table').should('not.be.visible')
     })
-  
-  
-  
   })
-  
